@@ -1,3 +1,19 @@
-<p>
-  stock-products works!
-</p>
+<div class="stock-product" [formGroup]="parent">
+  <div formArrayName="stock">
+    <div *ngFor="let item of stocks; let i = index">
+      <div class="stock-product__content" [formGroupName]="i">
+        <div class="stock-product__name">
+          {{ item.value.product_id }}
+        </div>
+        <input
+          type="number"
+          step="1"
+          min="0"
+          max="1000"
+          formControlName="quantity"
+        />
+      </div>
+      <button type="button">Remove</button>
+    </div>
+  </div>
+</div>

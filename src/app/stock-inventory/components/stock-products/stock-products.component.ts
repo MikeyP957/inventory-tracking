@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from "@angular/core";
+import { FormArray, FormGroup } from "@angular/forms";
 
 @Component({
-  selector: 'stock-products',
-  templateUrl: './stock-products.component.html',
-  styleUrls: ['./stock-products.component.sass']
+  selector: "stock-products",
+  templateUrl: "./stock-products.component.html",
+  styleUrls: ["./stock-products.component.scss"],
 })
-export class StockProductsComponent implements OnInit {
+export class StockProductsComponent {
+  @Input()
+  parent: FormGroup;
 
-  constructor() { }
 
-  ngOnInit() {
+  get stocks() {
+    return (this.parent.get("stock") as FormArray).controls;
   }
-
 }
