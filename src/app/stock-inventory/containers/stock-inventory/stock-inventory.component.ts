@@ -8,7 +8,6 @@ import { Product } from "../../models/product.interface";
   styleUrls: ["./stock-inventory.component.scss"],
 })
 export class StockInventoryComponent {
-  
   products: Product[] = [
     {
       id: 1,
@@ -56,10 +55,16 @@ export class StockInventoryComponent {
     });
   }
 
-  addStock(stock){
-    const control = this.form.get('stock') as FormArray;
-    control.push(this.createStock(stock))
+  addStock(stock) {
+    const control = this.form.get("stock") as FormArray;
+    control.push(this.createStock(stock));
   }
+
+  removeStock({ group, index }: { group: FormGroup; index: number }) {
+    const control = this.form.get("stock") as FormArray;
+    control.removeAt(index);
+  }
+
   onSubmit() {
     console.log("Submit: ", this.form.value);
   }
