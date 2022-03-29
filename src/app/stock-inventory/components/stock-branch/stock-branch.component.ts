@@ -8,5 +8,5 @@ import { FormGroup } from "@angular/forms";
 })
 export class StockBranchComponent {
   @Input()
-  parent:FormGroup;
+  parent: FormGroup;
 }

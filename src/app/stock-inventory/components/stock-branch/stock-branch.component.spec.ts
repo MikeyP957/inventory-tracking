@@ -1,18 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { ReactiveFormsModule } from "@angular/forms";
 
-import { StockBranchComponent } from './stock-branch.component';
+import { StockBranchComponent } from "./stock-branch.component";
 
-describe('StockBranchComponent', () => {
+describe("StockBranchComponent", () => {
   let component: StockBranchComponent;
   let fixture: ComponentFixture<StockBranchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule],
-      declarations: [ StockBranchComponent ]
-    })
-    .compileComponents();
+      declarations: [StockBranchComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,7 +20,7 @@ describe('StockBranchComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,22 +1,17 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
-import { StockInventoryModule } from './stock-inventory/stock-inventory.module';
+import { TestBed, async } from "@angular/core/testing";
+import { RouterTestingModule } from "@angular/router/testing";
+import { AppComponent } from "./app.component";
+import { StockInventoryModule } from "./stock-inventory/stock-inventory.module";
 
-describe('AppComponent', () => {
+describe("AppComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        StockInventoryModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule, StockInventoryModule],
+      declarations: [AppComponent],
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
+  it("should create the app", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
@@ -25,13 +20,15 @@ describe('AppComponent', () => {
   it(`should have as title 'inventory-tracking'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('inventory-tracking');
+    expect(app.title).toEqual("inventory-tracking");
   });
 
-  it('should render title in a h1 tag', () => {
+  it("should render title in a h1 tag", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to inventory-tracking!');
+    expect(compiled.querySelector("h1").textContent).toContain(
+      "Welcome to inventory-tracking!"
+    );
   });
 });
